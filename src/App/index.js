@@ -2,6 +2,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import MainLayout from "../common/Layouts/MainLayout/";
 import { APP_ROUTES } from "../common/constants/";
 import Send from "./Send";
+import Home from "./Home";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
             </MainLayout>
           }
         >
-          <Route path={APP_ROUTES.HOME} element={<Send />} />
+          <Route path={APP_ROUTES.HOME} element={<Home />} />
           <Route path={APP_ROUTES.SEND} element={<Send />} />
         </Route>
       </Routes>

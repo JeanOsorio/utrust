@@ -1,6 +1,8 @@
 import Button from "../Button";
 import styles from "./Card.module.css";
-function Card({ fullWidth = false, title, footer, footerText, bottonAction }) {
+function Card(
+  { fullWidth = false, title, footer = null },
+) {
   return (
     <div
       className={`${styles.card} ${fullWidth && styles.fullwidth}`}
@@ -9,8 +11,7 @@ function Card({ fullWidth = false, title, footer, footerText, bottonAction }) {
       <div className={styles.cardContent}>contenido de la card</div>
       {footer && (
         <div className={styles.cardFooter}>
-          <span>{footerText}</span>
-          <Button label="Next" />
+          {footer}
         </div>
       )}
     </div>

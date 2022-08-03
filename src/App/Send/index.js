@@ -1,13 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import Card from "../../common/Components/Card";
+import Button from "../../common/Components/Button";
+
 function Send(props) {
+  let navigate = useNavigate();
+  const handleClick = () => {
+    navigate("../send");
+  };
+
   return (
     <div>
-      <Card
-        title="My Ethereum address"
-        fullWidth={true}
-        footer={true}
-        footerText="Please copy the address from which you wish to send money."
-      />
+      soy send
     </div>
   );
 }
