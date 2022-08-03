@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Card from "../../common/Components/Card";
 import Button from "../../common/Components/Button";
 import Input from "../../common/Components/Input";
+import UTrust from "../../services/utrust";
 import styles from "./Send.module.css";
 
 const initFormState = {
@@ -47,6 +48,7 @@ function Send(props) {
     if (!formState.valid) {
       return;
     }
+    UTrust.sentEth(formState.values).then((response) => console.log(response));
   };
 
   return (
