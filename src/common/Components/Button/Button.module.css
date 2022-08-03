@@ -7,3 +7,7 @@
   border: 0;
   cursor: pointer;
 }
+
+.buttonDisabled {
+  background-color: var(--disable-purple);
+}

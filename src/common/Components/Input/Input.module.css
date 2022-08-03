@@ -1,0 +1,25 @@
+.inputLabel {
+  font-size: 12px;
+  line-height: 16px;
+  color:  var(--dark-blue);
+}
+
+.input {
+  margin: 8px 0 20px 0;
+  width: 350px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--white);
+  border: 1px solid var(--dark-purple);
+}
+
+.input::placeholder {
+  padding-left: 7px;
+  font-weight: normal;
+}
+
+.input[type=number] {
+  font-size: 16px;
+  font-weight: bold;
+}
+

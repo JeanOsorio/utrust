@@ -1,10 +1,12 @@
 :root {
   --white: #FFFFFF;
   --purple: rgba(105, 50, 212, 0.2);
+  --disable-purple: #A180E5;
   --ligth-purple: #F5F5FE;
   --dark-purple: #6932D4;
   --shadow: rgba(32, 37, 50, 0.15);
   --ligth-grey: #E0E0F4;
+  --dark-blue: #202532;
 }
 body {
   margin: 0;
@@ -18,4 +20,18 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+/* remove arrow from input type number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

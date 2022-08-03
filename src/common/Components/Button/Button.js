@@ -1,10 +1,12 @@
 import styles from "./Button.module.css";
-function Button({ label, onClick }) {
-  const handleClick = (event) => {
-    onClick(event);
-  };
+function Button({ label, onClick, disabled = false, type = "button" }) {
   return (
-    <button className={styles.button} onClick={handleClick}>{label}</button>
+    <button
+      className={`${styles.button} ${disabled ? styles.buttonDisabled : ""}`}
+      onClick={onClick}
+    >
+      {label}
+    </button>
   );
 }
 

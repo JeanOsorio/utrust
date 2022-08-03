@@ -4,6 +4,7 @@ import Card from "../../common/Components/Card";
 import Button from "../../common/Components/Button";
 import EtherscanService from "../../services/etherscan";
 import styles from "./Home.module.css";
+
 function Home(props) {
   let navigate = useNavigate();
   const [accounts, setAccounts] = useState([]);
@@ -35,7 +36,7 @@ function Home(props) {
     }
 
     return accounts.map((account) => (
-      <div className={styles.walletItem}>
+      <div key={account.account} className={styles.walletItem}>
         <span className={styles.walletAddress}>{account.account}</span>
         <span className={styles.walletBalance}>
           {account.balance} <span className={styles.walletAddress}>ETH</span>
