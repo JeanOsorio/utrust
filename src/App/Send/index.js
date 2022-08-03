@@ -104,7 +104,7 @@ function Send(props) {
               label="Amount"
               placeholder=" Ethereum amoount"
               onChange={handleChange}
-              pattern="[0-9]*\.?[0-9]*"
+              step="any"
             />
             <div className={styles.buttonContainer}>
               <Button type="submit" label="Send" disabled={!formState.valid} />
