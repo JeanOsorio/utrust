@@ -69,50 +69,48 @@ function Send(props) {
       userToWallet.balance = parseFloat(userToWallet.balance) +
         formState.values.amount;
       setUserWallets(copyUserWallets);
-      navigate("../send/success");
+      navigate("../send/success", { state: formState.values });
       return;
     }
 
     UTrustService.sendEth(formState.values).then((response) =>
-      navigate("../send/success")
+      navigate("../send/success", { state: formState.values })
     );
   };
 
   return (
-    <>
-      <Card title="Please fill the form to send Ethereum">
-        <div className={styles.formContainer}>
-          <form onSubmit={handleSubmit}>
-            <Input
-              id="from"
-              type="text"
-              label="From"
-              placeholder=" Your address"
-              onChange={handleChange}
-            />
+    <Card title="Please fill the form to send Ethereum">
+      <div className={styles.formContainer}>
+        <form onSubmit={handleSubmit}>
+          <Input
+            id="from"
+            type="text"
+            label="From"
+            placeholder=" Your address"
+            onChange={handleChange}
+          />
 
-            <Input
-              id="to"
-              type="text"
-              label="To"
-              placeholder=" Destination address"
-              onChange={handleChange}
-            />
-            <Input
-              id="amount"
-              type="number"
-              label="Amount"
-              placeholder=" Ethereum amoount"
-              onChange={handleChange}
-              step="any"
-            />
-            <div className={styles.buttonContainer}>
-              <Button type="submit" label="Send" disabled={!formState.valid} />
-            </div>
-          </form>
-        </div>
-      </Card>
-    </>
+          <Input
+            id="to"
+            type="text"
+            label="To"
+            placeholder=" Destination address"
+            onChange={handleChange}
+          />
+          <Input
+            id="amount"
+            type="number"
+            label="Amount"
+            placeholder=" Ethereum amoount"
+            onChange={handleChange}
+            step="any"
+          />
+          <div className={styles.buttonContainer}>
+            <Button type="submit" label="Send" disabled={!formState.valid} />
+          </div>
+        </form>
+      </div>
+    </Card>
   );
 }
 

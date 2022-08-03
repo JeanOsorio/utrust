@@ -1,0 +1,27 @@
+.successContainer {
+  width: 356px;
+ padding: 48px 24px 34px 24px;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+
+.subTitles {
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--dark-blue);
+}
+
+.wallet {
+  font-size: 12px;
+  color: var(--dark-blue);
+}
+
+.hr {
+  margin: 20px 0 20px 0;
+  width: 143px;
+  border: 1px solid var(--dark-blue);
+}
