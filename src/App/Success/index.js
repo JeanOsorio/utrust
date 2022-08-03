@@ -11,7 +11,7 @@ function Success(props) {
     if (!location.state) {
       navigate("../");
     }
-  }, [location]);
+  }, [location, navigate]);
   return (
     <Card title="Transaction complete">
       {location && location.state && (
