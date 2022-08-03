@@ -3,17 +3,19 @@ import { useNavigate } from "react-router-dom";
 import Card from "../../common/Components/Card";
 import Button from "../../common/Components/Button";
 import EtherscanService from "../../services/etherscan";
+import { useUserWalletsContext } from "../../store";
 import styles from "./Home.module.css";
 
 function Home(props) {
+  const [userWallets, setUserWallets] = useUserWalletsContext();
   let navigate = useNavigate();
-  const [accounts, setAccounts] = useState([]);
+  // const [accounts, setUserWallets] = useState([]);
 
   useEffect(() => {
-    if (accounts.length === 0) {
+    if (userWallets.length === 0) {
       getInitialAccounts();
     }
-  }, [accounts]);
+  }, [userWallets]);
 
   const getInitialAccounts = async () => {
     const accountList = await EtherscanService.getAccounts();
@@ -21,7 +23,7 @@ function Home(props) {
       account: account.account,
       balance: (account.balance / 1e18).toFixed(5),
     }));
-    setAccounts(
+    setUserWallets(
       accountWithEtherBalance.sort((a, b) => a.balance > b.balance).reverse(),
     );
   };
@@ -31,11 +33,11 @@ function Home(props) {
   };
 
   const renderWallets = () => {
-    if (accounts.length === 0) {
+    if (userWallets.length === 0) {
       return;
     }
 
-    return accounts.map((account) => (
+    return userWallets.map((account) => (
       <div key={account.account} className={styles.walletItem}>
         <span className={styles.walletAddress}>{account.account}</span>
         <span className={styles.walletBalance}>
