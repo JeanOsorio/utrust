@@ -1,0 +1,8 @@
+.button {
+  background-color: var(--dark-purple);
+  height: 40px;
+  color: var(--white);
+  border-radius: 100px;
+  min-width: 89px;
+  border: 0;
+}
