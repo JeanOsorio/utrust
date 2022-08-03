@@ -12,7 +12,7 @@ function Home(props) {
     if (accounts.length === 0) {
       getInitialAccounts();
     }
-  }, []);
+  }, [accounts]);
 
   const getInitialAccounts = async () => {
     const accountList = await EtherscanService.getAccounts();
