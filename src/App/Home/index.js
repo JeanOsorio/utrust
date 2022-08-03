@@ -18,9 +18,11 @@ function Home(props) {
     const accountList = await EtherscanService.getAccounts();
     const accountWithEtherBalance = accountList.map((account) => ({
       account: account.account,
-      balance: account.balance,
+      balance: (account.balance / 1e18).toFixed(5),
     }));
-    setAccounts(accountWithEtherBalance);
+    setAccounts(
+      accountWithEtherBalance.sort((a, b) => a.balance > b.balance).reverse(),
+    );
   };
 
   const handleClick = () => {

@@ -8,9 +8,8 @@
 
 
 .walletItem {
-  width: 100%;
+  width: 470px;
   height: 75px;
-  padding: 0 24px 0 24px;
   display: flex;
   place-items: center;
   justify-content: space-between;
@@ -19,9 +18,11 @@
 
 .walletAddress {
   font-size: 12px;
+  font-weight: normal;
 }
 
 .walletBalance {
   font-family: "Arial";
   font-size: 16px;
+  font-weight: bold;
 }
