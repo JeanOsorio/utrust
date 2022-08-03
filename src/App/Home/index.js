@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../../common/Components/Card";
 import Button from "../../common/Components/Button";
@@ -9,15 +9,8 @@ import styles from "./Home.module.css";
 function Home(props) {
   const [userWallets, setUserWallets] = useUserWalletsContext();
   let navigate = useNavigate();
-  // const [accounts, setUserWallets] = useState([]);
 
-  useEffect(() => {
-    if (userWallets.length === 0) {
-      getInitialAccounts();
-    }
-  }, [userWallets]);
-
-  const getInitialAccounts = async () => {
+  const getInitialAccounts = useCallback(async () => {
     const accountList = await EtherscanService.getAccounts();
     const accountWithEtherBalance = accountList.map((account) => ({
       account: account.account,
@@ -28,7 +21,13 @@ function Home(props) {
     setUserWallets(
       accountWithEtherBalance.sort((a, b) => a.balance > b.balance).reverse(),
     );
-  };
+  }, [setUserWallets]);
+
+  useEffect(() => {
+    if (userWallets.length === 0) {
+      getInitialAccounts();
+    }
+  }, [userWallets, getInitialAccounts]);
 
   const handleClick = () => {
     navigate("../send");
