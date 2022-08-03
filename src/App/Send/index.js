@@ -9,9 +9,9 @@ function Send(props) {
   };
 
   return (
-    <div>
-      soy send
-    </div>
+    <>
+      <Card title="Please fill the form to send Ethereum" />
+    </>
   );
 }
 

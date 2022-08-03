@@ -1,12 +1,45 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../../common/Components/Card";
 import Button from "../../common/Components/Button";
-
+import EtherscanService from "../../services/etherscan";
+import styles from "./Home.module.css";
 function Home(props) {
   let navigate = useNavigate();
+  const [accounts, setAccounts] = useState([]);
+
+  useEffect(() => {
+    if (accounts.length === 0) {
+      getInitialAccounts();
+    }
+  }, []);
+
+  const getInitialAccounts = async () => {
+    const accountList = await EtherscanService.getAccounts();
+    const accountWithEtherBalance = accountList.map((account) => ({
+      account: account.account,
+      balance: account.balance,
+    }));
+    setAccounts(accountWithEtherBalance);
+  };
+
   const handleClick = () => {
-    console.log("clicked!");
     navigate("../send");
+  };
+
+  const renderWallets = () => {
+    if (accounts.length === 0) {
+      return;
+    }
+
+    return accounts.map((account) => (
+      <div className={styles.walletItem}>
+        <span className={styles.walletAddress}>{account.account}</span>
+        <span className={styles.walletBalance}>
+          {account.balance} <span className={styles.walletAddress}>ETH</span>
+        </span>
+      </div>
+    ));
   };
   const cardFooter = () => {
     return (
@@ -23,7 +56,11 @@ function Home(props) {
         title="My Ethereum address"
         fullWidth={true}
         footer={cardFooter()}
-      />
+      >
+        <div className={styles.walletContainer}>
+          {renderWallets()}
+        </div>
+      </Card>
     </div>
   );
 }

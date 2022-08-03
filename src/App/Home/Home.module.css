@@ -1,0 +1,27 @@
+.walletContainer {
+  padding: 0 24px 0 24px;
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid var(--ligth-grey);
+}
+
+
+.walletItem {
+  width: 100%;
+  height: 75px;
+  padding: 0 24px 0 24px;
+  display: flex;
+  place-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ligth-grey);
+}
+
+.walletAddress {
+  font-size: 12px;
+}
+
+.walletBalance {
+  font-family: "Arial";
+  font-size: 16px;
+}

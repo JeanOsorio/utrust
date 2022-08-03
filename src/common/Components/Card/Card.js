@@ -1,14 +1,13 @@
-import Button from "../Button";
 import styles from "./Card.module.css";
 function Card(
-  { fullWidth = false, title, footer = null },
+  { fullWidth = false, title, footer = null, children },
 ) {
   return (
     <div
       className={`${styles.card} ${fullWidth && styles.fullwidth}`}
     >
       <div className={styles.cardHeader}>{title}</div>
-      <div className={styles.cardContent}>contenido de la card</div>
+      <div className={styles.cardContent}>{children}</div>
       {footer && (
         <div className={styles.cardFooter}>
           {footer}
