@@ -1,9 +1,9 @@
 import CommunicationService from "./communication";
-const ETrust = () => {
+const UTrustService = () => {
   const sendEth = (data) => {
     return CommunicationService.http({
       url: "https://jsonplaceholder.typicode.com", // using jsonplaceholder api to simulate a POST requuest
-      path: "post",
+      path: "posts",
       method: "POST",
       data,
       header: {
@@ -11,7 +11,8 @@ const ETrust = () => {
       },
     }).then((response) => response).catch();
   };
+
   return { sendEth };
 };
 
-export default ETrust();
+export default UTrustService();

@@ -1,4 +1,4 @@
-import CommunicationService from "./communication.js";
+import CommunicationService from "./communication";
 
 const EtherscanService = () => {
   /*

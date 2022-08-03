@@ -3,6 +3,7 @@ import MainLayout from "../common/Layouts/MainLayout/";
 import { APP_ROUTES } from "../common/constants/";
 import Send from "./Send";
 import Home from "./Home";
+import Success from "./Success";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         >
           <Route path={APP_ROUTES.HOME} element={<Home />} />
           <Route path={APP_ROUTES.SEND} element={<Send />} />
+          <Route path={APP_ROUTES.SEND_SUCCESS} element={<Success />} />
         </Route>
       </Routes>
     </div>
