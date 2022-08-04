@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# UTrust challenge by Jean Osorio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello guys, this is my proposal for the utrust challenge. Basically, I decide to use the CRA as a scaffold for the react application. I try to do it without any other dependency, so for the CSS I use CSS module because it is already set up with CRA, although in this app we are not going to have any CSS collation name, in a real application, it could help with that, but if we have to set a CSS style based on a property it would be most helpful using something else like styled-components.
 
-## Available Scripts
+I use the latest version of react-router and use the `<Outlet />` component to define a Layout for the hold aplication, this helps me to avoid creating the same layout on every page. Also, I structure the pages base on the application routes (fractal folder structure). 
 
-In the project directory, you can run:
+I created a communication service that helps me to invoke the request in an easy way, just have to specify the URL, the path and some other params, I have to specify the URL each time because I use a different URL, one to get the data from etherscan and JSONplaceholder to simulate the send ether functionality. In a real app, we defined a baseUrl instead of having to tell the service what URL to use each time. 
 
-### `npm start`
+Although I created some components to be reusables, these components should be in a component library. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To have all the user information available on the entire application I used the React Context API, basically, I get the wallets and save them in the context, this will allow me to refresh the balance when the user sends ether.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Last but not least, I decide to upload the `.env` file with the etherscan API key because this is just a test key. 
 
-### `npm test`
+## How to run this progam
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+npm start
+```
 
-### `npm run build`
+## How to run the test
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### visual mode
+```bash
+npm run cy:open
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### headless
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm run test:e2e
+```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
