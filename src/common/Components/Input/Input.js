@@ -1,7 +1,17 @@
 import styles from "./Input.module.css";
 
 function Input(
-  { type = "text", value, placeholder, label, id, onChange, pattern, step },
+  {
+    type = "text",
+    value,
+    placeholder,
+    label,
+    id,
+    onChange,
+    pattern,
+    step,
+    testId,
+  },
 ) {
   return (
     <div>
@@ -15,6 +25,7 @@ function Input(
         onChange={onChange}
         pattern={pattern}
         step={step}
+        data-testid={testId}
       />
     </div>
   );

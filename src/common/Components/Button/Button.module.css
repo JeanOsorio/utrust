@@ -8,6 +8,7 @@
   cursor: pointer;
 }
 
-.buttonDisabled {
+.button:disabled {
+  cursos: not-allowed;
   background-color: var(--disable-purple);
 }

@@ -6,7 +6,7 @@ const EtherscanService = () => {
    */
   const getAccountBalance = (addresses) => {
     return CommunicationService.http({
-      url: "https://api.etherscan.io/",
+      url: "https://api.etherscan.io",
       path: "api",
       params: {
         module: "account",
@@ -22,7 +22,7 @@ const EtherscanService = () => {
   };
   const getAccounts = () => {
     return CommunicationService.http({
-      url: "https://api.etherscan.io/",
+      url: "https://api.etherscan.io",
       path: "api",
       params: {
         module: "account",

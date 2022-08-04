@@ -88,6 +88,7 @@ function Send(props) {
             label="From"
             placeholder=" Your address"
             onChange={handleChange}
+            testId="from-input"
           />
 
           <Input
@@ -96,6 +97,7 @@ function Send(props) {
             label="To"
             placeholder=" Destination address"
             onChange={handleChange}
+            testId="to-input"
           />
           <Input
             id="amount"
@@ -104,6 +106,7 @@ function Send(props) {
             placeholder=" Ethereum amoount"
             onChange={handleChange}
             step="any"
+            testId="amount-input"
           />
           <div className={styles.buttonContainer}>
             <Button type="submit" label="Send" disabled={!formState.valid} />

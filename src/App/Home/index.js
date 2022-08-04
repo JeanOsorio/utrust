@@ -39,9 +39,15 @@ function Home(props) {
     }
 
     return userWallets.map((account) => (
-      <div key={account.account} className={styles.walletItem}>
-        <span className={styles.walletAddress}>{account.account}</span>
-        <span className={styles.walletBalance}>
+      <div
+        key={account.account}
+        className={styles.walletItem}
+        data-testid="wallet-list-item"
+      >
+        <span className={styles.walletAddress} data-testid="wallet">
+          {account.account}
+        </span>
+        <span className={styles.walletBalance} data-testis="wallet-balance">
           {account.balance} <span className={styles.walletAddress}>ETH</span>
         </span>
       </div>
@@ -51,7 +57,7 @@ function Home(props) {
     return (
       <>
         <span>Please copy the address from which you wish to send money.</span>
-        <Button label="Next" onClick={handleClick} />
+        <Button label="Next" onClick={handleClick} testId="button-next" />
       </>
     );
   };
@@ -63,7 +69,7 @@ function Home(props) {
         fullWidth={true}
         footer={cardFooter()}
       >
-        <div className={styles.walletContainer}>
+        <div className={styles.walletContainer} data-testid="wallet-list">
           {renderWallets()}
         </div>
       </Card>
