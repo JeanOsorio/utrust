@@ -9,6 +9,6 @@
 }
 
 .button:disabled {
-  cursos: not-allowed;
+  cursor: not-allowed;
   background-color: var(--disable-purple);
 }
